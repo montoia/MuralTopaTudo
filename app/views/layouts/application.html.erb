@@ -14,8 +14,17 @@
   <%= render '/layouts/menu' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <div class="container-fluid">
-    <%= yield %>
+  <div class="container">
+      <div class="row">
+        <div class="col"></div>
+
+        <div class="col-6">
+          <%= yield %>
+        </div>
+
+        <div class="col"></div>
+      </div>
+
   </div>
 
   </body>

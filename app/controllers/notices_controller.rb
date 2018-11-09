@@ -10,6 +10,7 @@ class NoticesController < ApplicationController
 
   def homepage
     @notices = Notice.all
+    @users = User.all
   end
 
   # GET /notices/1

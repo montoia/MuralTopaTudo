@@ -1,24 +1,38 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Avisos</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
+  <p id="notice"><%= notice %></p>
+  <ul class="list-group list-group-flush">
     <% @notices.each do |notice| %>
-      <tr>
-        <td><%= notice.description %></td>
-      </tr>
+      <li class="list-group-item">
+        <%= notice.description %>
+        <% if can? :manage, notice %>
+          <%= link_to 'Edit', edit_notice_path(notice), class: 'badge badge-pill badge-light' %>
+          <%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-pill badge-light'  %>
+
+          <% else%>
+          <div class="badge badge-pill badge-primary">
+          <%= notice.user.email%>
+          </div>
+
+        <% end %>
+      </li>
     <% end %>
+  </ul>
+
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Notice', new_notice_path %>
+
+
+
