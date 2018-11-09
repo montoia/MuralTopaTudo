@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :notices
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :notices do
+    collection do
+      get 'homepage' # definindo a rota da homepage
+      post 'homepage' # para a busca
+    end
+  end
+  root 'notices#homepage'
 end
+

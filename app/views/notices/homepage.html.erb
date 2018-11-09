@@ -11,9 +11,9 @@
   </thead>
 
   <tbody>
-    <% @avisos.each do |aviso| %>
+    <% @notices.each do |notice| %>
       <tr>
-        <td><%= aviso.description %></td>
+        <td><%= notice.description %></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,4 +21,4 @@
 
 <br>
 
-<%= link_to 'New Aviso', new_aviso_path %>
+<%= link_to 'New Notice', new_notice_path %>
