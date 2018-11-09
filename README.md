@@ -95,4 +95,29 @@ Inserção dos dados do postgres no arquivo database
          ```
          bundle install
          ```
+    - Criação do model Ability para fazer as restrições personalizadas
+         ```
+         rails g cancan:ability
+         ```
+    - Regra de testricao de acesso:
+        ```
+        class Ability
+          include CanCan::Ability
+        
+          def initialize(user)
+            user ||= User.new
+            can :manage, Notice, user_id: user.id
+        ```
+    - No index dos notice inserir a regra que somente dono do aviso pode ver, editar e apagar em sua area adm 
+        ```
+        <% @notices.each do |notice| %>
+              <tr>
+                <% if can? :manage, notice %>
+                <td><%= notice.description %></td>
+                <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+                <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              </tr>
+        <% end %>
+        ```
     
