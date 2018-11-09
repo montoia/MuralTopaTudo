@@ -52,5 +52,28 @@ Inserção dos dados do postgres no arquivo database
      ```
      rake db:migrate
      ```
+ - Instalação do bootstrap
+     - Adicionar na GemFile
+         ```
+         # bootstrap
+         gem 'jquery-rails'
+         gem 'bootstrap-sass', '~> 3.2.0'
+         gem 'autoprefixer-rails'
+         gem 'mini_racer'
+         ```
+     - Executar um bundle install
+         ```
+         bundle install
+         ```
+     - Alterar a extensão do arquivo do assets/stylesheets/application.css
+         ```
+         application.css.sass
+         ```
+         Em seguida inserir:
+         ```
+         @import "bootstrap-sprockets"
+         @import "bootstrap"
+         ```
+         Depois reiniciar a aplicação
 
     

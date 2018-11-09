@@ -35,6 +35,12 @@ gem 'jbuilder', '~> 2.5'
 # login
 gem 'devise'
 
+# bootstrap
+gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+gem 'mini_racer'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
