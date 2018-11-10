@@ -10,7 +10,7 @@ class NoticesController < ApplicationController
   end
 
   def homepage
-    @notices = Notice.all
+    @notices = Notice.order('created_at DESC')
     @users = User.all
   end
 
