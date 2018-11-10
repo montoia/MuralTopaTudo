@@ -1,26 +1,22 @@
 <p id="notice"><%= notice %></p>
 <h1>Notices</h1>
 <table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
+  <ul class="list-group list-group-flush">
     <% @notices.each do |notice| %>
-      <tr>
-        <% if can? :manage, notice %>
-        <td><%= notice.description %></td>
-        <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-        <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% if can? :manage, notice %>
+      <li class="list-group-item">
+          <%= notice.description %>
+          <%= link_to 'Edit', edit_notice_path(notice), class: 'badge badge-pill badge-light' %>
+          <%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-pill badge-light'  %>
         <% end %>
-      </tr>
+      </li>
     <% end %>
+  </ul>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Notice', new_notice_path %>

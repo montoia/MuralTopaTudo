@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :notices do
     collection do
       get 'homepage' # definindo a rota da homepage
-      post 'homepage' # para a busca
     end
   end
   root 'notices#homepage'

@@ -1,5 +1,3 @@
-
-
 <h1>Avisos</h1>
 <table>
   <thead>
@@ -14,6 +12,7 @@
     <% @notices.each do |notice| %>
       <li class="list-group-item">
         <%= notice.description %>
+        <small class="text-muted"><%= notice.created_at.strftime("%H:%M | %d-%m-%Y")%></small>
         <% if can? :manage, notice %>
           <%= link_to 'Edit', edit_notice_path(notice), class: 'badge badge-pill badge-light' %>
           <%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' }, class: 'badge badge-pill badge-light'  %>

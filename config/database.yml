@@ -28,7 +28,7 @@ development:
 
   # database.
   username: postgres
-  password: postgres
+  password: aluno
   host: localhost
   port: 5432
 

@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
   before_action :authenticate_user!, except: :homepage
   before_action :set_notice, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /notices
   # GET /notices.json
